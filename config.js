@@ -5,5 +5,6 @@ window.CONFIG = {
   INSTAGRAM_URL: "https://www.instagram.com/lupipets.store",
   EMAIL: "lupipets.store@gmail.com",
   ADDRESS: "Av. General Rondizzoni #2034, Local 2, Santiago",
-  MAPS_URL: "https://www.google.com/maps/search/?api=1&query=Av.+General+Rondizzoni+2034+Santiago"
+  MAPS_URL: "https://www.google.com/maps/search/?api=1&query=Av.+General+Rondizzoni+2034+Santiago",
+  PROMO_DELAY_MS: 8000 // popup de promo (demo); 0 = desactivado
 };

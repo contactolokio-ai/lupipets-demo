@@ -29,7 +29,8 @@
    "precio": 64990,
    "antes": 72990,
    "img": "assets/img/dogfood2.webp",
-   "badge": "Top ventas"
+   "badge": "Top ventas",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 12,5 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p2",
@@ -42,7 +43,8 @@
    "precio": 54990,
    "antes": null,
    "img": "assets/img/bone.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 12 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p3",
@@ -55,7 +57,8 @@
    "precio": 47990,
    "antes": 52990,
    "img": "assets/img/puppy2.webp",
-   "badge": "-9%"
+   "badge": "-9%",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 6,8 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p4",
@@ -68,7 +71,8 @@
    "precio": 27490,
    "antes": null,
    "img": "assets/img/hero-perro.webp",
-   "badge": "Nuevo"
+   "badge": "Nuevo",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 4 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p5",
@@ -81,7 +85,8 @@
    "precio": 32990,
    "antes": null,
    "img": "assets/img/dogfood2.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 15 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p6",
@@ -94,7 +99,8 @@
    "precio": 16990,
    "antes": null,
    "img": "assets/img/dogball.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Alimento completo y balanceado para el día a día de tu perro. Viene en formato 2 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p7",
@@ -107,7 +113,8 @@
    "precio": 52990,
    "antes": 58990,
    "img": "assets/img/catfood.webp",
-   "badge": "-10%"
+   "badge": "-10%",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 7,5 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p8",
@@ -120,7 +127,8 @@
    "precio": 36990,
    "antes": null,
    "img": "assets/img/catfood2.webp",
-   "badge": "Top ventas"
+   "badge": "Top ventas",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 3,2 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p9",
@@ -133,7 +141,8 @@
    "precio": 49990,
    "antes": null,
    "img": "assets/img/catfood.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 7 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p10",
@@ -146,7 +155,8 @@
    "precio": 17990,
    "antes": null,
    "img": "assets/img/catfood2.webp",
-   "badge": "Nuevo"
+   "badge": "Nuevo",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 1,8 kg, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p11",
@@ -159,7 +169,8 @@
    "precio": 1490,
    "antes": null,
    "img": "assets/img/wetfood.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 85 g, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p12",
@@ -172,7 +183,8 @@
    "precio": 14990,
    "antes": 16990,
    "img": "assets/img/wetfood.webp",
-   "badge": "Pack"
+   "badge": "Pack",
+   "descripcion": "Alimento completo y balanceado para el día a día de tu gato. Viene en formato 6 x 200 g, ideal para mantener su rutina de comidas sin quedarte corto. Si tienes dudas sobre la porción o la transición, te asesoramos por WhatsApp."
   },
   {
    "id": "p13",
@@ -185,7 +197,8 @@
    "precio": 2990,
    "antes": null,
    "img": "assets/img/cattreat.webp",
-   "badge": "Top ventas"
+   "badge": "Top ventas",
+   "descripcion": "Un premio rico para consentir a tu gato o reforzar el entrenamiento. Formato 4 x 14 g, fácil de guardar y llevar. Ofrécelo con moderación como complemento de su alimento habitual."
   },
   {
    "id": "p14",
@@ -198,7 +211,8 @@
    "precio": 12990,
    "antes": 14990,
    "img": "assets/img/cattreat.webp",
-   "badge": "-13%"
+   "badge": "-13%",
+   "descripcion": "Un premio rico para consentir a tu gato o reforzar el entrenamiento. Formato 20 x 14 g, fácil de guardar y llevar. Ofrécelo con moderación como complemento de su alimento habitual."
   },
   {
    "id": "p15",
@@ -211,7 +225,8 @@
    "precio": 4990,
    "antes": null,
    "img": "assets/img/treats.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Un premio rico para consentir a tu perro o reforzar el entrenamiento. Formato 250 g, fácil de guardar y llevar. Ofrécelo con moderación como complemento de su alimento habitual."
   },
   {
    "id": "p16",
@@ -224,7 +239,8 @@
    "precio": 6490,
    "antes": null,
    "img": "assets/img/treats.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Un premio rico para consentir a tu perro o reforzar el entrenamiento. Formato 250 g, fácil de guardar y llevar. Ofrécelo con moderación como complemento de su alimento habitual."
   },
   {
    "id": "p17",
@@ -237,7 +253,8 @@
    "precio": 3990,
    "antes": null,
    "img": "assets/img/bone.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Un premio rico para consentir a tu perro o reforzar el entrenamiento. Formato 1 un., fácil de guardar y llevar. Ofrécelo con moderación como complemento de su alimento habitual."
   },
   {
    "id": "p18",
@@ -250,7 +267,8 @@
    "precio": 5990,
    "antes": null,
    "img": "assets/img/dogball.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Juguete pensado para que tu perro se entretenga y gaste energía jugando. Formato 3 un.. Recomendamos supervisar el juego y revisar el juguete periódicamente."
   },
   {
    "id": "p19",
@@ -263,7 +281,8 @@
    "precio": 7990,
    "antes": null,
    "img": "assets/img/dogtoy.webp",
-   "badge": "Nuevo"
+   "badge": "Nuevo",
+   "descripcion": "Juguete pensado para que tu perro se entretenga y gaste energía jugando. Formato M. Recomendamos supervisar el juego y revisar el juguete periódicamente."
   },
   {
    "id": "p20",
@@ -276,7 +295,8 @@
    "precio": 3490,
    "antes": null,
    "img": "assets/img/cattoy.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Juguete pensado para que tu gato se entretenga y gaste energía jugando. Formato 2 un.. Recomendamos supervisar el juego y revisar el juguete periódicamente."
   },
   {
    "id": "p21",
@@ -289,7 +309,8 @@
    "precio": 14990,
    "antes": 17990,
    "img": "assets/img/harness.webp",
-   "badge": "-17%"
+   "badge": "-17%",
+   "descripcion": "Accesorio práctico para la rutina diaria de tu perro. Formato/talla M. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   },
   {
    "id": "p22",
@@ -302,7 +323,8 @@
    "precio": 6990,
    "antes": null,
    "img": "assets/img/collar.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Accesorio práctico para la rutina diaria de tu perro. Formato/talla M. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   },
   {
    "id": "p23",
@@ -315,7 +337,8 @@
    "precio": 9990,
    "antes": null,
    "img": "assets/img/dogfood2.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Accesorio práctico para la rutina diaria de tu perro. Formato/talla 1 un.. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   },
   {
    "id": "p24",
@@ -328,7 +351,8 @@
    "precio": 19990,
    "antes": 24990,
    "img": "assets/img/catbed.webp",
-   "badge": "-20%"
+   "badge": "-20%",
+   "descripcion": "Accesorio práctico para la rutina diaria de tu gato. Formato/talla 50 cm. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   },
   {
    "id": "p25",
@@ -341,7 +365,8 @@
    "precio": 9990,
    "antes": null,
    "img": "assets/img/litter.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Accesorio práctico para la rutina diaria de tu gato. Formato/talla 10 kg. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   },
   {
    "id": "p26",
@@ -354,7 +379,8 @@
    "precio": 29990,
    "antes": null,
    "img": "assets/img/bed.webp",
-   "badge": null
+   "badge": null,
+   "descripcion": "Accesorio práctico para la rutina diaria de tu perro. Formato/talla L. Si no sabes qué talla elegir, escríbenos y te ayudamos."
   }
  ]
 }

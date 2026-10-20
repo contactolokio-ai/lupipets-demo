@@ -12,8 +12,8 @@ $("#brands").innerHTML = BRANDS.map(b=>`<button class="br" data-q="${b}"><span>$
 // carrusel
 let si=0; const sl=$("#slides"), go=i=>{si=(i+3)%3; sl.style.transform=`translateX(-${si*100}%)`; $$("#dots button").forEach((d,k)=>d.classList.toggle("on",k===si));};
 $$("#dots button").forEach((d,k)=>d.onclick=()=>{go(k);clearInterval(t)}); let t=setInterval(()=>go(si+1),5000);
-const card = p => `<article class="card"><div class="pi"><img src="${p.img}" alt="${p.nombre}" loading="lazy">${p.badge?`<span class="badge ${p.antes?'off':''}">${p.badge}</span>`:''}</div>
-<div class="pb"><small class="brand">${p.marca}</small><h3>${p.nombre}</h3><p>${p.tam} · ${p.desc}</p>
+const card = p => `<article class="card"><div class="pi" data-open="${p.id}"><img src="${p.img}" alt="${p.nombre}" loading="lazy">${p.badge?`<span class="badge ${p.antes?'off':''}">${p.badge}</span>`:''}</div>
+<div class="pb"><small class="brand">${p.marca}</small><h3 data-open="${p.id}">${p.nombre}</h3><p>${p.tam} · ${p.desc}</p>
 <div class="pr"><b>${fmt(p.precio)}</b>${p.antes?`<s>${fmt(p.antes)}</s>`:''}</div>
 <button class="add" data-add="${p.id}">Agregar <span><svg class="ic"><use href="#i-plus"/></svg></span></button></div></article>`;
 function render(){ if(arguments[0]!=="keep") void 0;
@@ -50,5 +50,30 @@ function cartUI(){
 ["#cartBtn","#cartBtn2"].forEach(s=>$(s).onclick=()=>$("#sheet").hidden=false);
 $("#close").onclick=()=>$("#sheet").hidden=true; $("#sheet").onclick=e=>{if(e.target.id==="sheet")$("#sheet").hidden=true};
 $("#clear").onclick=()=>{cart=[];save();};
-fetch("data/products.json").then(r=>r.json()).then(d=>{D=d; $("#rail").innerHTML=d.productos.filter(p=>p.badge).map(card).join(""); render(); cartUI();});
+const IC=n=>`<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const CATN=c=>D.categorias.find(x=>x.id===c).nombre;
+let dq=1;
+function openDetail(id){const p=P(id); dq=1;
+ $("#detBody").innerHTML=`<div class="dimg"><img src="${p.img}" alt="${p.nombre}">${p.badge?`<span class="badge ${p.antes?'off':''}">${p.badge}</span>`:''}</div>
+ <div class="dinfo"><small class="brand">${p.marca}</small><h3>${p.nombre}</h3>
+ <div class="tags"><span>${IC(p.mascota==="perro"?"dog":"cat")}${p.mascota==="perro"?"Perro":"Gato"}</span><span>${CATN(p.cat)}</span><span>${p.tam}</span></div>
+ <div class="pr"><b>${fmt(p.precio)}</b>${p.antes?`<s>${fmt(p.antes)}</s>`:''}</div>
+ <p class="ddesc">${p.descripcion}</p>
+ <div class="drow"><span class="qty big"><button data-dq="-1" aria-label="Menos">−</button><b id="dqv">1</b><button data-dq="1" aria-label="Más">+</button></span>
+ <button class="cta" id="dAdd">${IC("plus")} Agregar al carrito</button></div>
+ <a class="cta wa full" id="dWa" target="_blank" rel="noopener"><svg class="ic wa-g"><use href="#i-wa"/></svg> Pedir por WhatsApp</a></div>`;
+ const upd=()=>{$("#dqv").textContent=dq; $("#dWa").href=wa(`Hola Lupipets, quiero pedir: ${dq} x ${p.nombre} (${p.tam}) – ${fmt(p.precio*dq)}. ¿Tienen stock?`);}; upd();
+ $("#detBody").onclick=e=>{const b=e.target.closest("[data-dq]"); if(b){dq=Math.max(1,dq+ +b.dataset.dq);upd();}
+  if(e.target.closest("#dAdd")){const it=cart.find(i=>i.id===id); it?it.q+=dq:cart.push({id,q:dq}); save(); closeM(); const T=$("#toast"); T.classList.add("on"); setTimeout(()=>T.classList.remove("on"),1400);}};
+ $("#detail").hidden=false; document.body.classList.add("lock");}
+const closeM=()=>{$$(".modal").forEach(m=>m.hidden=true); document.body.classList.remove("lock");};
+document.addEventListener("click",e=>{const o=e.target.closest("[data-open]"); if(o){e.stopPropagation(); openDetail(o.dataset.open);} if(e.target.closest("[data-close]")||e.target.classList.contains("modal")) closeM();},true);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeM(); $("#sheet").hidden=true;}});
+function promo(){ if(!C.PROMO_DELAY_MS||sessionStorage.getItem("lp_promo"))return;
+ setTimeout(()=>{ if(!$$(".modal").every(m=>m.hidden))return; sessionStorage.setItem("lp_promo","1");
+  $("#promoList").innerHTML=["p1","p3","p2"].map(P).map(p=>`<button class="pitem" data-open="${p.id}"><img src="${p.img}" alt=""><span><small>${p.marca}</small><b>${p.nombre}</b><em>${fmt(p.precio)}${p.antes?` <s>${fmt(p.antes)}</s>`:''}</em></span></button>`).join("");
+  $("#promoWa").href=wa("Hola Lupipets, vi la promo de alimento para perros. ¿Qué opciones tienen?");
+  $("#promo").hidden=false; document.body.classList.add("lock");},C.PROMO_DELAY_MS);}
+$("#promoGo").onclick=()=>{closeM(); st={pet:"perro",cat:"alimento",q:"",of:false}; $("#q").value=""; render(); goShop();};
+fetch("data/products.json").then(r=>r.json()).then(d=>{D=d; $("#rail").innerHTML=d.productos.filter(p=>p.badge).map(card).join(""); render(); cartUI(); promo();});
 })();

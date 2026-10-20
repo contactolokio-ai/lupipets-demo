@@ -7,7 +7,7 @@ let LIM=8, D, st = {pet:"", cat:"", q:"", of:false}, cart = JSON.parse(localStor
 ["#waTop","#waBottom","#waFab","#waStore","#fWa","#waEmpty"].forEach(s=>$(s).href=wa(C.WHATSAPP_MSG));
 $("#mapsTop").href=$("#mapsLink").href=C.MAPS_URL; $("#addr").textContent=$("#fAddr").textContent=C.ADDRESS;
 $("#fMail").href="mailto:"+C.EMAIL; $("#fMail").textContent=C.EMAIL; $("#fIg").href=C.INSTAGRAM_URL;
-$("#mq").innerHTML = [...BRANDS,...BRANDS,...BRANDS].map(b=>`<span>${b}</span><i>🐾</i>`).join("");
+$("#mq").innerHTML = [...BRANDS,...BRANDS,...BRANDS].map(b=>`<span>${b}</span><svg class="ic"><use href="#i-paw"/></svg>`).join("");
 $("#brands").innerHTML = BRANDS.map(b=>`<button class="br" data-q="${b}"><span>${b}</span><small>${b}</small></button>`).join("");
 // carrusel
 let si=0; const sl=$("#slides"), go=i=>{si=(i+3)%3; sl.style.transform=`translateX(-${si*100}%)`; $$("#dots button").forEach((d,k)=>d.classList.toggle("on",k===si));};
@@ -15,7 +15,7 @@ $$("#dots button").forEach((d,k)=>d.onclick=()=>{go(k);clearInterval(t)}); let t
 const card = p => `<article class="card"><div class="pi"><img src="${p.img}" alt="${p.nombre}" loading="lazy">${p.badge?`<span class="badge ${p.antes?'off':''}">${p.badge}</span>`:''}</div>
 <div class="pb"><small class="brand">${p.marca}</small><h3>${p.nombre}</h3><p>${p.tam} · ${p.desc}</p>
 <div class="pr"><b>${fmt(p.precio)}</b>${p.antes?`<s>${fmt(p.antes)}</s>`:''}</div>
-<button class="add" data-add="${p.id}">Agregar <span>+</span></button></div></article>`;
+<button class="add" data-add="${p.id}">Agregar <span><svg class="ic"><use href="#i-plus"/></svg></span></button></div></article>`;
 function render(){ if(arguments[0]!=="keep") void 0;
   const q=st.q.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"");
   const L=D.productos.filter(p=>(!st.pet||p.mascota===st.pet)&&(!st.cat||p.cat===st.cat)&&(!st.of||p.antes)&&(!q||(p.nombre+" "+p.marca+" "+p.desc).toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").includes(q)));
@@ -42,9 +42,9 @@ function save(){localStorage.setItem("lp_cart",JSON.stringify(cart)); cartUI();}
 function cartUI(){
   const n=cart.reduce((a,i)=>a+i.q,0), tot=cart.reduce((a,i)=>a+i.q*P(i.id).precio,0);
   ["#cnt","#cnt2"].forEach(s=>{$(s).hidden=!n;$(s).textContent=n;});
-  $("#items").innerHTML=cart.map((i,x)=>{const p=P(i.id);return `<li><img src="${p.img}" alt=""><span><b>${p.nombre}</b><small>${p.tam} · ${fmt(p.precio)}</small></span><span class="qty"><button data-qd="-1" data-i="${x}">−</button><b>${i.q}</b><button data-qd="1" data-i="${x}">+</button></span></li>`}).join("")||`<li class="none">Tu carrito está vacío 🐾</li>`;
+  $("#items").innerHTML=cart.map((i,x)=>{const p=P(i.id);return `<li><img src="${p.img}" alt=""><span><b>${p.nombre}</b><small>${p.tam} · ${fmt(p.precio)}</small></span><span class="qty"><button data-qd="-1" data-i="${x}">−</button><b>${i.q}</b><button data-qd="1" data-i="${x}">+</button></span></li>`}).join("")||`<li class="none">Tu carrito está vacío</li>`;
   $("#total").textContent=fmt(tot);
-  $("#sendCart").href=wa("Hola Lupipets 🐾 quiero hacer este pedido:\n"+cart.map(i=>{const p=P(i.id);return `• ${i.q} x ${p.nombre} (${p.tam}) – ${fmt(p.precio*i.q)}`}).join("\n")+`\nTotal referencial: ${fmt(tot)}\n¿Me confirman stock y si retiro en tienda o despacho?`);
+  $("#sendCart").href=wa("Hola Lupipets, quiero hacer este pedido:\n"+cart.map(i=>{const p=P(i.id);return `• ${i.q} x ${p.nombre} (${p.tam}) – ${fmt(p.precio*i.q)}`}).join("\n")+`\nTotal referencial: ${fmt(tot)}\n¿Me confirman stock y si retiro en tienda o despacho?`);
   $("#sendCart").classList.toggle("dis",!n);
 }
 ["#cartBtn","#cartBtn2"].forEach(s=>$(s).onclick=()=>$("#sheet").hidden=false);

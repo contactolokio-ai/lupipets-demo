@@ -75,5 +75,12 @@ function promo(){ if(!C.PROMO_DELAY_MS||sessionStorage.getItem("lp_promo"))retur
   $("#promoWa").href=wa("Hola Lupipets, vi la promo de alimento para perros. ¿Qué opciones tienen?");
   $("#promo").hidden=false; document.body.classList.add("lock");},C.PROMO_DELAY_MS);}
 $("#promoGo").onclick=()=>{closeM(); st={pet:"perro",cat:"alimento",q:"",of:false}; $("#q").value=""; render(); goShop();};
+const STARS='<svg class="ic st"><use href="#i-star"/></svg>'.repeat(5);
+$("#rvStarsTop").innerHTML=STARS;
+fetch("data/reviews.json").then(r=>r.json()).then(R=>{const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+ $("#rvs").innerHTML=R.reviews.map(r=>{const long=r.t.length>150, cut=long?r.t.slice(0,r.t.lastIndexOf(" ",140)).replace(/[.,;:]+$/,"")+"…":r.t;
+ return `<article class="rv"><div class="rvt"><span class="av">${r.n[0]}</span><span><b>${esc(r.n)}</b><small>${esc(r.d)} · Google</small></span></div><span class="stars">${STARS}</span>
+ <p data-full="${esc(r.t).replace(/"/g,"&quot;")}">“${esc(cut)}”</p>${long?'<button class="more-rv">Leer más</button>':''}</article>`}).join("");});
+document.addEventListener("click",e=>{const b=e.target.closest(".more-rv"); if(b){const p=b.previousElementSibling; p.textContent="“"+p.dataset.full+"”"; b.remove();}});
 fetch("data/products.json").then(r=>r.json()).then(d=>{D=d; $("#rail").innerHTML=d.productos.filter(p=>p.badge).map(card).join(""); render(); cartUI(); promo();});
 })();
